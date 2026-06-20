@@ -35,5 +35,15 @@ Site nazik/naif, modern ve minimal bir his vermeli; animasyonlar yumuşak olmal�
 ## Komutlar
 
 - `npm run dev` — geliştirme sunucusu
-- `npm run build` — production build
+- `npm run build` — production build (static export, `out/` klasörüne yazar; bkz. Deploy)
 - `node scripts/optimize-images.mjs` — yeni ham görselleri optimize eder
+
+## Deploy (GitHub Pages)
+
+Site GitHub Pages üzerinde statik export olarak yayınlanıyor (`next.config.ts`'te `output: "export"`). `.github/workflows/deploy.yml` her `main`'e push'ta otomatik build+deploy yapar.
+
+- Repo bir proje sitesi (`yagmursugur/yagmursugur-graphic`), yani site `https://yagmursugur.github.io/yagmursugur-graphic/` altında yayınlanır — kök değil. Bu yüzden build'de `NEXT_PUBLIC_BASE_PATH=/yagmursugur-graphic` set edilir (workflow'da zaten ayarlı).
+- `next/link` ve `next/image` basePath'i otomatik ekler, **ama düz `<a>`/`<img>` veya data dosyalarındaki string path'ler eklemez.** Böyle bir yer eklersen `src/lib/site.ts`'teki `basePath` sabitini elle prefix'le (örnek: `CvDownload.tsx`'teki CV linkleri, `ProjectCard.tsx`/`ProjectDetailStack.tsx`'teki görsel `src`'leri).
+- `images.unoptimized: true` zorunlu — statik export'ta Next'in görsel optimizasyon sunucusu çalışmaz.
+- Repo ayarlarında **Settings → Pages → Build and deployment → Source: GitHub Actions** seçili olmalı (bir kere manuel yapılması gerekir, workflow bunu otomatik açmaz).
+- Lokal olarak GH Pages build'ini test etmek için: `NEXT_PUBLIC_BASE_PATH=/yagmursugur-graphic npm run build` (Windows/Git Bash'te env değişkeni path'e çevrilmesin diye `MSYS_NO_PATHCONV=1` ile çalıştır).

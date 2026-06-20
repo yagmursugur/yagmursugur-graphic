@@ -7,6 +7,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { Button } from "@/components/ui/Button";
 import { profile } from "@/data/profile";
+import { basePath } from "@/lib/site";
 
 export function CvDownload() {
   const { t } = useLocale();
@@ -20,10 +21,10 @@ export function CvDownload() {
           <p className="text-zinc-600">{t(dictionary.cv.body)}</p>
 
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <Button href="/cv/YagmurSugur-G2026TR.pdf" download>
+            <Button href={`${basePath}/cv/YagmurSugur-G2026TR.pdf`} download>
               {t(dictionary.cv.downloadTr)}
             </Button>
-            <Button href="/cv/YagmurSugur-G2026EN.pdf" download variant="ghost">
+            <Button href={`${basePath}/cv/YagmurSugur-G2026EN.pdf`} download variant="ghost">
               {t(dictionary.cv.downloadEn)}
             </Button>
           </div>

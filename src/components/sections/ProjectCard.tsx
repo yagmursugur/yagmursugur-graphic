@@ -6,6 +6,7 @@ import { useLocale } from "@/lib/i18n/LocaleContext";
 import { dictionary } from "@/lib/i18n/dictionary";
 import { cardCollapseTransition, cardExpandTransition, pressTransition } from "@/lib/motion";
 import { ProjectDetailStack } from "./ProjectDetailStack";
+import { basePath } from "@/lib/site";
 import type { Project } from "@/types/content";
 
 export function ProjectCard({
@@ -38,7 +39,7 @@ export function ProjectCard({
           style={{ aspectRatio: `${project.cover.width} / ${project.cover.height}` }}
         >
           <Image
-            src={project.cover.src}
+            src={`${basePath}${project.cover.src}`}
             alt={project.cover.alt ? t(project.cover.alt) : t(project.title)}
             fill
             sizes="(min-width: 768px) 720px, 100vw"
