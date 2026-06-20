@@ -23,12 +23,12 @@ export function Gallery() {
         />
 
         <LayoutGroup>
-          <div className="mt-12 grid gap-8 sm:grid-cols-2">
+          <div className="mt-12 grid gap-10 sm:grid-cols-2">
             {projects.map((project, index) => (
               <FadeIn
                 key={project.id}
                 delay={index * 0.08}
-                className={projects.length === 1 ? "sm:col-span-2 sm:mx-auto sm:max-w-xl sm:w-full" : undefined}
+                className={projects.length === 1 ? "sm:col-span-2" : undefined}
               >
                 <ProjectCard
                   project={project}

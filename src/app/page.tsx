@@ -13,10 +13,10 @@ export default function Home() {
       <Header />
       <main className="flex-1">
         <Hero />
+        <Gallery />
         <About />
         <Skills />
         <Experience />
-        <Gallery />
         <CvDownload />
       </main>
       <Footer />

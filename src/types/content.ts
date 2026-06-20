@@ -19,6 +19,7 @@ export type Project = {
   category: LocalizedString;
   description: LocalizedString;
   year?: number;
+  tools: string[];
   cover: ImageAsset;
   details: ImageAsset[];
 };

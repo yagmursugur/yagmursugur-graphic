@@ -10,10 +10,10 @@ import { LanguageToggle } from "./LanguageToggle";
 import { MobileNav } from "./MobileNav";
 
 const sections = [
+  { id: "work", key: "work" as const },
   { id: "about", key: "about" as const },
   { id: "skills", key: "skills" as const },
   { id: "experience", key: "experience" as const },
-  { id: "work", key: "work" as const },
   { id: "contact", key: "contact" as const },
 ];
 

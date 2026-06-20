@@ -11,6 +11,7 @@ export const projects: Project[] = [
       en: "Noirel is a niche perfume brand built on contrast and depth. Inspired by the elegance of shadow and the quiet power of simplicity, the identity aims to feel mysterious, refined, and timelessly sophisticated.",
     },
     year: 2026,
+    tools: ["Adobe Illustrator", "Figma", "ChatGPT (Brief)"],
     cover: {
       src: "/images/projects/noirel/cover.jpg",
       width: 1600,

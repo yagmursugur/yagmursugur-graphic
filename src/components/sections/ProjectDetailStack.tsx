@@ -14,7 +14,7 @@ export function ProjectDetailStack({ details }: { details: ImageAsset[] }) {
             src={`${basePath}${image.src}`}
             alt={image.alt ? t(image.alt) : ""}
             fill
-            sizes="(min-width: 768px) 720px, 100vw"
+            sizes="(min-width: 1024px) 1024px, 100vw"
             className="object-cover"
           />
         </div>

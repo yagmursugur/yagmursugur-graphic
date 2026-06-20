@@ -7,6 +7,7 @@ import { dictionary } from "@/lib/i18n/dictionary";
 import { cardCollapseTransition, cardExpandTransition, pressTransition } from "@/lib/motion";
 import { ProjectDetailStack } from "./ProjectDetailStack";
 import { basePath } from "@/lib/site";
+import { Tag } from "@/components/ui/Tag";
 import type { Project } from "@/types/content";
 
 export function ProjectCard({
@@ -42,7 +43,7 @@ export function ProjectCard({
             src={`${basePath}${project.cover.src}`}
             alt={project.cover.alt ? t(project.cover.alt) : t(project.title)}
             fill
-            sizes="(min-width: 768px) 720px, 100vw"
+            sizes="(min-width: 1024px) 1024px, 100vw"
             className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.015]"
             priority
           />
@@ -68,9 +69,14 @@ export function ProjectCard({
             exit={{ opacity: 0 }}
             transition={expanded ? { duration: 0.3, delay: 0.1 } : { duration: 0.15 }}
           >
-            <p className="px-6 pb-6 text-sm leading-relaxed text-zinc-600">
+            <p className="px-6 text-sm leading-relaxed text-zinc-600">
               {t(project.description)}
             </p>
+            <div className="flex flex-wrap gap-2 px-6 pb-6 pt-4">
+              {project.tools.map((tool) => (
+                <Tag key={tool}>{tool}</Tag>
+              ))}
+            </div>
             <ProjectDetailStack details={project.details} />
           </motion.div>
         )}
