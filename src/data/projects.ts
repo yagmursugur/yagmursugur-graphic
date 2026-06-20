@@ -15,7 +15,7 @@ export const projects: Project[] = [
     cover: {
       src: "/images/projects/noirel/cover.jpg",
       width: 1600,
-      height: 1200,
+      height: 1132,
       alt: { tr: "Noirel marka kimliği kapağı", en: "Noirel brand identity cover" },
     },
     details: [
