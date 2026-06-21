@@ -112,16 +112,16 @@ export const projects: Project[] = [
         alt: { tr: "Celora ürün fotoğrafı, elde tutulan tüp", en: "Celora product photo, tube held in hand" },
       },
       {
-        src: "/images/projects/celora/10.jpg",
-        width: 1601,
-        height: 1601,
-        alt: { tr: "Celora ürün seti yakın çekim", en: "Celora product set close-up" },
-      },
-      {
         src: "/images/projects/celora/11.jpg",
         width: 1601,
         height: 1601,
         alt: { tr: "Celora 4 adımlı günlük rutin", en: "Celora 4-step daily routine" },
+      },
+      {
+        src: "/images/projects/celora/10.jpg",
+        width: 1601,
+        height: 1601,
+        alt: { tr: "Celora ürün seti yakın çekim", en: "Celora product set close-up" },
       },
       {
         src: "/images/projects/celora/12.jpg",
