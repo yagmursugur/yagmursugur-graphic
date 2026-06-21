@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Outfit, Manrope } from "next/font/google";
 import "./globals.css";
 import { LocaleProvider } from "@/lib/i18n/LocaleContext";
+import { siteUrl } from "@/lib/site";
 
 const outfit = Outfit({
   variable: "--font-outfit",
@@ -13,7 +14,6 @@ const manrope = Manrope({
   subsets: ["latin"],
 });
 
-const siteUrl = "https://yagmursugur.github.io/yagmursugur-graphic/";
 const title = "Yağmur Sügür - Grafik Tasarımcı";
 const description =
   "Yağmur Sügür'ün grafik tasarım portfolyosu: marka kimliği, sosyal medya, afiş ve baskı tasarımları.";

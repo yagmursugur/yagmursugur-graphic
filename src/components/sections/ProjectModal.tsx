@@ -6,7 +6,7 @@ import Image from "next/image";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { useLocale } from "@/lib/i18n/LocaleContext";
 import { dictionary } from "@/lib/i18n/dictionary";
-import { basePath } from "@/lib/site";
+import { basePath, siteUrl } from "@/lib/site";
 import { Tag } from "@/components/ui/Tag";
 import { ProjectDetailStack } from "./ProjectDetailStack";
 import type { Project } from "@/types/content";
@@ -78,7 +78,7 @@ export function ProjectModal({
             <button
               type="button"
               onClick={() => {
-                const url = `${window.location.origin}${window.location.pathname}#project-${project.slug}`;
+                const url = `${siteUrl}works/${project.slug}/`;
                 const shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`;
                 window.open(shareUrl, "_blank", "noopener,noreferrer");
               }}

@@ -10,13 +10,20 @@ Tek sayfalık (single-page) portfolyo sitesi — Yağmur Sügür, grafik tasarı
 - `src/lib/i18n/` — hafif özel i18n: `LocaleContext` (TR/EN, localStorage'a persist) + `dictionary.ts` (UI metinleri). URL bazlı locale routing yok, tüm site anlık dil değiştirir.
 - `src/lib/motion.ts` — paylaşılan "naif/yumuşak" animasyon ayarları (easing/duration). Yeni animasyon eklerken buradaki değerleri kullan, her bileşende yeniden icat etme.
 - `src/components/ui/FadeIn.tsx` — scroll'da yumuşak fade+rise animasyonunun tek kaynağı; tüm bölümler bunu kullanır.
-- `src/components/sections/Gallery.tsx` + `ProjectCard.tsx` — galeri kartı kapağa tıklanınca **sayfa içinde yerinde genişler** (Framer Motion `layout`), ayrı bir modal/route'a gitmez. Yeni proje eklemek için `src/data/projects.ts`'e yeni bir obje eklemek yeterli.
+- `src/components/sections/Gallery.tsx` + `ProjectCard.tsx` + `ProjectModal.tsx` — galeri kartına tıklanınca proje detayı `document.body`'e portal'lanan bir **popup/modal** olarak açılır (sayfa aşağı uzamaz). Modal açıkken URL hash'i `#project-<slug>` olur ve `Gallery.tsx` mount'ta bu hash'i okuyup ilgili projeyi otomatik açar (bkz. Paylaşım). Yeni proje eklemek için `src/data/projects.ts`'e yeni bir obje eklemek yeterli.
+- `src/app/works/[slug]/page.tsx` — her proje için **ayrı, statik bir "case study" sayfası** (`generateStaticParams` ile build-time'da üretilir: `/works/noirel/`, `/works/celora/`). Bu sayfa anasayfadaki tek-sayfa deneyiminin bir parçası değil; tek amacı paylaşım linklerinin (LinkedIn vb.) o projeye özel `og:title`/`og:description`/`og:image` göstermesini sağlamak — sosyal medya tarayıcıları JS çalıştırmaz ve URL hash'ini görmez, dolayısıyla anasayfadaki `#project-<slug>` hash'i tek başına doğru önizleme kartı üretemez. `ProjectModal.tsx`'teki "LinkedIn'de paylaş" butonu bu sayfanın URL'sini paylaşır.
 
 ## Görseller
 
 - Ham (upscaled, 4-6.5MB) PNG'ler `assets-raw/` altında tutulur ve **commit edilmez** (`.gitignore`'da). Sadece `scripts/optimize-images.mjs` (sharp) ile optimize edilmiş `.jpg` çıktıları `public/images/projects/<slug>/` altına gider.
 - Yeni proje eklerken: orijinalleri `assets-raw/<slug>/` içine koy (kapak dosyası `kapak.png` olmalı), `node scripts/optimize-images.mjs` çalıştır, çıkan width/height değerlerini `src/data/projects.ts`'teki ilgili `Project` objesine işle.
 - Tüm görseller `next/image` ile render edilir.
+
+## Open Graph / paylaşım önizlemeleri
+
+- `src/lib/site.ts`'teki `siteUrl` (`https://yagmursugur.github.io/yagmursugur-graphic/`) tüm `og:image`/`og:url` gibi mutlak URL'lerin tek kaynağı. Yeni bir mutlak URL gerekirse buradan türet, elle yazma.
+- `src/app/layout.tsx` site geneli (anasayfa) için sabit OG/Twitter metadata'sı tanımlar. `src/app/works/[slug]/page.tsx` ise `generateMetadata` ile **her proje için kendi** `og:title`/`og:description`/`og:image`'ini üretir.
+- Yeni proje eklerken ekstra bir şey yapmana gerek yok — `/works/[slug]` sayfası `src/data/projects.ts`'teki veriden otomatik türüyor.
 
 ## CV
 

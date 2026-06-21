@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import { useLocale } from "@/lib/i18n/LocaleContext";
 import { basePath } from "@/lib/site";
