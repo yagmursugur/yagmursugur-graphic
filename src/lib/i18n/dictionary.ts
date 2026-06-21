@@ -15,6 +15,8 @@ export const dictionary = {
       en: "Designing quiet, meaningful visual stories.",
     },
     cta: { tr: "İşlere göz at", en: "See the work" },
+    cvTr: { tr: "CV (TR)", en: "CV (TR)" },
+    cvEn: { tr: "CV (EN)", en: "CV (EN)" },
   },
   about: {
     heading: { tr: "Merhaba, ben Yağmur", en: "Hi, I'm Yağmur" },

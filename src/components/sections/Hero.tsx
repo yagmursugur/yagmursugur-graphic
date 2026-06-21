@@ -6,6 +6,7 @@ import { dictionary } from "@/lib/i18n/dictionary";
 import { Container } from "@/components/ui/Container";
 import { profile } from "@/data/profile";
 import { gentleTransition } from "@/lib/motion";
+import { basePath } from "@/lib/site";
 
 export function Hero() {
   const { t } = useLocale();
@@ -54,6 +55,37 @@ export function Hero() {
             ↓
           </span>
         </motion.a>
+
+        <motion.div
+          initial={{ opacity: 0, y: rise }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ ...gentleTransition, delay: reduceMotion ? 0 : 0.44 }}
+          className="mt-1 flex items-center gap-3 text-xs text-zinc-500"
+        >
+          <a
+            href={`${basePath}/cv/YagmurSugur-G2026TR.pdf`}
+            download
+            className="inline-flex items-center gap-1 transition-colors duration-200 hover:text-ink"
+          >
+            <svg aria-hidden viewBox="0 0 16 16" className="h-3 w-3" fill="none" stroke="currentColor" strokeWidth="1.5">
+              <path d="M8 1.5v8M8 9.5 5 6.5M8 9.5l3-3M2.5 11v2a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-2" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+            {t(dictionary.hero.cvTr)}
+          </a>
+          <span aria-hidden className="text-zinc-300">
+            ·
+          </span>
+          <a
+            href={`${basePath}/cv/YagmurSugur-G2026EN.pdf`}
+            download
+            className="inline-flex items-center gap-1 transition-colors duration-200 hover:text-ink"
+          >
+            <svg aria-hidden viewBox="0 0 16 16" className="h-3 w-3" fill="none" stroke="currentColor" strokeWidth="1.5">
+              <path d="M8 1.5v8M8 9.5 5 6.5M8 9.5l3-3M2.5 11v2a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-2" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+            {t(dictionary.hero.cvEn)}
+          </a>
+        </motion.div>
       </Container>
     </section>
   );
