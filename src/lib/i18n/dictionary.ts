@@ -36,6 +36,7 @@ export const dictionary = {
     heading: { tr: "Seçilmiş çalışmalar", en: "Selected work" },
     expandHint: { tr: "Görmek için dokun", en: "Tap to view" },
     collapseHint: { tr: "Kapatmak için dokun", en: "Tap to close" },
+    share: { tr: "LinkedIn'de paylaş", en: "Share on LinkedIn" },
   },
   cv: {
     heading: { tr: "Birlikte çalışalım", en: "Let's work together" },
