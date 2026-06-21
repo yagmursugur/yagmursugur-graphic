@@ -25,10 +25,7 @@ export function ProjectCard({
       transition={pressTransition}
       className="group block w-full overflow-hidden rounded-2xl border border-zinc-200 bg-white/60 text-left"
     >
-      <div
-        className="relative w-full"
-        style={{ aspectRatio: `${project.cover.width} / ${project.cover.height}` }}
-      >
+      <div className="relative aspect-[4/3] w-full">
         <Image
           src={`${basePath}${project.cover.src}`}
           alt={project.cover.alt ? t(project.cover.alt) : t(project.title)}
