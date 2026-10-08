@@ -137,4 +137,77 @@ export const projects: Project[] = [
       },
     ],
   },
+  {
+    "id": "hothead",
+    "slug": "hothead",
+    "title": {
+      "tr": "Hothead",
+      "en": "Hothead"
+    },
+    "category": {
+      "tr": "Marka Kimliği & Ambalaj",
+      "en": "Brand Identity & Packaging"
+    },
+    "description": {
+      "tr": "Hothead, güçlü tatları ve eğlenceli, asi bir karakteri buluşturan bir acı sos markası. Kırmızı, siyah ve krem tonları; etkileyici tipografi ve alev maskotuyla bir araya gelerek cesur bir görsel kimlik oluşturuyor. Marka dünyası; şişe etiketleri, kutu ambalajları, afiş kampanyası ve destekleyici grafik uygulamalarla tamamlanıyor.",
+      "en": "Hothead is a hot sauce brand that combines bold flavors with a playful, rebellious personality. Red, black and cream tones, expressive typography and a flame mascot create a bold visual identity. The brand world extends across bottle labels, box packaging, a poster campaign and supporting graphic applications."
+    },
+    "tools": [],
+    "cover": {
+      "src": "/images/projects/hothead/cover.jpg",
+      "width": 1556,
+      "height": 1008,
+      "alt": {
+        "tr": "Hothead acı sos marka kimliği kapağı",
+        "en": "Hothead hot sauce brand identity cover"
+      }
+    },
+    "details": [
+      {
+        "src": "/images/projects/hothead/1.jpg",
+        "width": 1597,
+        "height": 703,
+        "alt": {
+          "tr": "Hothead logo, maskot ve şişe etiketi",
+          "en": "Hothead logo, mascot and bottle label"
+        }
+      },
+      {
+        "src": "/images/projects/hothead/2.jpg",
+        "width": 1596,
+        "height": 800,
+        "alt": {
+          "tr": "Hothead kutu ve ambalaj tasarımı",
+          "en": "Hothead box and packaging design"
+        }
+      },
+      {
+        "src": "/images/projects/hothead/3.jpg",
+        "width": 1600,
+        "height": 709,
+        "alt": {
+          "tr": "Hothead afiş kampanyası",
+          "en": "Hothead poster campaign"
+        }
+      },
+      {
+        "src": "/images/projects/hothead/4.jpg",
+        "width": 1600,
+        "height": 694,
+        "alt": {
+          "tr": "Hothead renk paleti, tipografi ve grafik öğeler",
+          "en": "Hothead color palette, typography and graphic elements"
+        }
+      },
+      {
+        "src": "/images/projects/hothead/5.jpg",
+        "width": 1600,
+        "height": 894,
+        "alt": {
+          "tr": "Hothead gönderim kutuları, çıkartmalar ve ürün detayları",
+          "en": "Hothead shipping boxes, stickers and product details"
+        }
+      }
+    ]
+  },
 ];
